@@ -137,7 +137,13 @@ async function waitTerminalFocused() {
 
 async function setSize(width, height) {
   await app.evaluate((_e, [w, h]) => { globalThis.kctTest.win.setContentSize(w, h); }, [width, height]);
-  await page.waitForFunction(([w, h]) => window.innerWidth === w && window.innerHeight === h, [width, height], { timeout: 5000 });
+  try {
+    await page.waitForFunction(([w, h]) => window.innerWidth === w && window.innerHeight === h, [width, height], { timeout: 5000 });
+  } catch (e) {
+    const got = await page.evaluate(() => `${innerWidth}×${innerHeight}`);
+    const screenSize = await app.evaluate(({ screen }) => { const s = screen.getPrimaryDisplay().workAreaSize; return `${s.width}×${s.height}`; });
+    throw new Error(`창을 ${width}×${height}로 바꾸지 못했습니다(지금 ${got}, 화면 작업 영역 ${screenSize}): ${e.message}`);
+  }
   await sleep(300); // ResizeObserver → fit이 끝나기를 기다린다
 }
 

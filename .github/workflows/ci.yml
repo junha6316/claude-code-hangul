@@ -26,6 +26,8 @@ jobs:
       - run: brew install tmux
       - run: npm ci
       - run: npm test
+      - name: 화면 해상도 기록
+        run: system_profiler SPDisplaysDataType | grep -iE 'resolution|display type' || true
       - run: npm run e2e:ui
       - name: 실패하면 시험 산출물 올리기
         if: failure()

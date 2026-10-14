@@ -27,6 +27,8 @@ function createMainWindow({ test = false } = {}) {
     useContentSize: true,
     title: WINDOW_TITLE,
     show: false,
+    // 시험 모드에서는 화면보다 큰 크기도 허락한다(CI 러너 화면이 작으면 1100×720까지 늘어나지 못한다).
+    enableLargerThanScreen: test,
     // 창이 뜰 때 흰 화면이 번쩍이지 않게 OS 밝기 설정에 맞춘 바탕색을 쓴다(styles.css의 --bg와 같은 값).
     backgroundColor: nativeTheme.shouldUseDarkColors ? '#1b1c1f' : '#f6f6f3',
     webPreferences: {
