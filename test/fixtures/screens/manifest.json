@@ -1,0 +1,321 @@
+{
+  "claudeVersion": "2.1.296 (Claude Code)",
+  "capturedAt": "2026-10-14T00:52:41.593Z",
+  "command": "cd app && node test/screenGuide.live.js --capture",
+  "how": "fakeClaudeHome(가짜 CLAUDE_CONFIG_DIR, 가짜 키) + tmux(-L 고유 소켓, -u). env에 BROWSER=/usr/bin/true. keys는 tmux send-keys -H로 바이트 그대로 보냄. 홈 폴더 경로는 /Users/tester로 바꾸고 끝의 빈 줄은 뺐음.",
+  "screens": [
+    {
+      "file": "theme.txt",
+      "expect": "theme",
+      "source": "real",
+      "note": "첫 실행 테마 고르기(온보딩 안 함, 키 없음)",
+      "launch": {
+        "onboarded": false,
+        "withKey": false,
+        "approveKey": true,
+        "trusted": false,
+        "cols": 120,
+        "rows": 36
+      },
+      "before": []
+    },
+    {
+      "file": "login-method.txt",
+      "expect": "login-method",
+      "source": "real",
+      "note": "로그인 방법 고르기(테마에서 Enter)",
+      "launch": {
+        "onboarded": false,
+        "withKey": false,
+        "approveKey": true,
+        "trusted": false,
+        "cols": 120,
+        "rows": 36
+      },
+      "before": [
+        {
+          "keys": "\r",
+          "hex": "0d"
+        }
+      ]
+    },
+    {
+      "file": "login-browser.txt",
+      "expect": "login-method",
+      "source": "real",
+      "note": "구독 계정 로그인을 고른 뒤 브라우저 로그인 대기(가짜 설정으로 갈 수 있는 끝)",
+      "launch": {
+        "onboarded": false,
+        "withKey": false,
+        "approveKey": true,
+        "trusted": false,
+        "cols": 120,
+        "rows": 36
+      },
+      "before": [
+        {
+          "keys": "\r",
+          "hex": "0d"
+        },
+        {
+          "keys": "\r",
+          "hex": "0d"
+        }
+      ]
+    },
+    {
+      "file": "api-key.txt",
+      "expect": "api-key",
+      "source": "real",
+      "note": "가짜 키를 쓸지 묻기(키 미승인, 테마에서 Enter)",
+      "launch": {
+        "onboarded": false,
+        "withKey": true,
+        "approveKey": false,
+        "trusted": false,
+        "cols": 120,
+        "rows": 36
+      },
+      "before": [
+        {
+          "keys": "\r",
+          "hex": "0d"
+        }
+      ]
+    },
+    {
+      "file": "press-enter.txt",
+      "expect": "press-enter",
+      "source": "real",
+      "note": "주의 사항 뒤 Enter로 넘기기(키 승인됨, 테마에서 Enter)",
+      "launch": {
+        "onboarded": false,
+        "withKey": true,
+        "approveKey": true,
+        "trusted": false,
+        "cols": 120,
+        "rows": 36
+      },
+      "before": [
+        {
+          "keys": "\r",
+          "hex": "0d"
+        }
+      ]
+    },
+    {
+      "file": "trust.txt",
+      "expect": "trust",
+      "source": "real",
+      "note": "폴더 신뢰 창(믿지 않는 폴더, 120칸)",
+      "launch": {
+        "onboarded": true,
+        "withKey": true,
+        "approveKey": true,
+        "trusted": false,
+        "cols": 120,
+        "rows": 36
+      },
+      "before": []
+    },
+    {
+      "file": "trust-80cols.txt",
+      "expect": "trust",
+      "source": "real",
+      "note": "폴더 신뢰 창(믿지 않는 폴더, 80칸)",
+      "launch": {
+        "onboarded": true,
+        "withKey": true,
+        "approveKey": true,
+        "trusted": false,
+        "cols": 80,
+        "rows": 30
+      },
+      "before": []
+    },
+    {
+      "file": "idle.txt",
+      "expect": null,
+      "source": "real",
+      "note": "입력 대기(정상, 믿는 폴더)",
+      "launch": {
+        "onboarded": true,
+        "withKey": true,
+        "approveKey": true,
+        "trusted": true,
+        "cols": 120,
+        "rows": 36
+      },
+      "before": []
+    },
+    {
+      "file": "auth-error.txt",
+      "expect": "auth-error",
+      "source": "real",
+      "note": "요청 뒤 인증 오류(가짜 키라 Invalid API key)",
+      "launch": {
+        "onboarded": true,
+        "withKey": true,
+        "approveKey": true,
+        "trusted": true,
+        "cols": 120,
+        "rows": 36
+      },
+      "before": [
+        {
+          "keys": "안녕하세요",
+          "hex": "ec 95 88 eb 85 95 ed 95 98 ec 84 b8 ec 9a 94"
+        },
+        {
+          "keys": "\r",
+          "hex": "0d"
+        }
+      ]
+    },
+    {
+      "file": "auth-logged-out-idle.txt",
+      "expect": "auth-error",
+      "source": "real",
+      "note": "로그인 안 한 입력 대기(아래 줄에 Not logged in)",
+      "launch": {
+        "onboarded": true,
+        "withKey": false,
+        "approveKey": true,
+        "trusted": true,
+        "cols": 120,
+        "rows": 36
+      },
+      "before": []
+    },
+    {
+      "file": "auth-logged-out.txt",
+      "expect": "auth-error",
+      "source": "real",
+      "note": "로그인 안 한 상태에서 요청(모델 요청 없이 바로 오류)",
+      "launch": {
+        "onboarded": true,
+        "withKey": false,
+        "approveKey": true,
+        "trusted": true,
+        "cols": 120,
+        "rows": 36
+      },
+      "before": [
+        {
+          "keys": "안녕하세요",
+          "hex": "ec 95 88 eb 85 95 ed 95 98 ec 84 b8 ec 9a 94"
+        },
+        {
+          "keys": "\r",
+          "hex": "0d"
+        }
+      ]
+    },
+    {
+      "file": "login-method-slash.txt",
+      "expect": "login-method",
+      "source": "real",
+      "note": "/login으로 연 로그인 방법 고르기",
+      "launch": {
+        "onboarded": true,
+        "withKey": false,
+        "approveKey": true,
+        "trusted": true,
+        "cols": 120,
+        "rows": 36
+      },
+      "before": [
+        {
+          "keys": "안녕하세요",
+          "hex": "ec 95 88 eb 85 95 ed 95 98 ec 84 b8 ec 9a 94"
+        },
+        {
+          "keys": "\r",
+          "hex": "0d"
+        },
+        {
+          "keys": "/login\r",
+          "hex": "2f 6c 6f 67 69 6e 0d"
+        }
+      ]
+    },
+    {
+      "file": "other-claude-help.txt",
+      "expect": null,
+      "source": "real",
+      "note": "claude 화면이 아닌 프로그램 출력(claude --help)",
+      "launch": {
+        "command": "claude --help",
+        "cols": 120,
+        "rows": 50
+      },
+      "before": []
+    },
+    {
+      "file": "other-ls-root.txt",
+      "expect": null,
+      "source": "real",
+      "note": "claude 화면이 아닌 프로그램 출력(/bin/ls -1 /)",
+      "launch": {
+        "command": "/bin/ls -1 /",
+        "cols": 100,
+        "rows": 30
+      },
+      "before": []
+    },
+    {
+      "file": "permission-write.txt",
+      "expect": "permission",
+      "source": "rB",
+      "note": "파일 만들기 허락 창",
+      "from": "review/hook/runs/rB/caps/10-write-hook-holding-2s.txt"
+    },
+    {
+      "file": "permission-bash.txt",
+      "expect": "permission",
+      "source": "rB",
+      "note": "명령 실행 허락 창(선택지 4개)",
+      "from": "review/hook/runs/rB/caps/60-bash-always-holding.txt"
+    },
+    {
+      "file": "idle-after-work.txt",
+      "expect": null,
+      "source": "rB",
+      "note": "일을 마친 뒤 입력 대기",
+      "from": "review/hook/runs/rB/caps/12-write-after-hook-allow-2s.txt"
+    },
+    {
+      "file": "idle-hook-errors.txt",
+      "expect": null,
+      "source": "rB",
+      "note": "훅 오류 줄(⎿ connect ECONNREFUSED)이 남은 입력 대기",
+      "from": "review/hook/runs/rB/caps/99-before-kill.txt"
+    },
+    {
+      "file": "usage-limit.synthetic.txt",
+      "expect": "usage-limit",
+      "source": "synthetic",
+      "how": "auth-error.txt(실제 캡처)의 배치를 그대로 두고 일부 줄만 바꿔 손으로 만든 것. 실제 캡처가 아님. 오류 줄을 errors 문서 예시 \"You've hit your session limit · resets 3:45pm\"로 바꿈.",
+      "docs": "https://code.claude.com/docs/en/errors#youve-hit-your-session-limit"
+    },
+    {
+      "file": "usage-limit-waiting.synthetic.txt",
+      "expect": "usage-limit",
+      "source": "synthetic",
+      "how": "usage-limit.synthetic.txt의 입력 칸 위 빈 줄 두 개에 interactive-mode 문서의 기다리는 중 두 줄을 넣음. 실제 화면에서 이 두 줄이 놓이는 자리는 확인하지 못함.",
+      "docs": "https://code.claude.com/docs/en/interactive-mode#wait-for-a-usage-limit-to-reset"
+    },
+    {
+      "file": "stale-auth-error.synthetic.txt",
+      "expect": null,
+      "source": "synthetic",
+      "how": "auth-error.txt(실제 캡처)의 배치를 그대로 두고 일부 줄만 바꿔 손으로 만든 것. 실제 캡처가 아님. 인증 오류 뒤에 새 질문과 답을 덧붙임. 지난 차례의 오류에는 안내를 띄우지 않아야 함."
+    },
+    {
+      "file": "assistant-quotes.synthetic.txt",
+      "expect": null,
+      "source": "synthetic",
+      "how": "auth-error.txt(실제 캡처)의 배치를 그대로 두고 일부 줄만 바꿔 손으로 만든 것. 실제 캡처가 아님. 오류 줄 대신 Claude의 답이 영어 화면 문구를 인용하는 줄을 넣음. 입력 칸이 보이는 동안 답 속 문구로 안내를 띄우지 않아야 함."
+    }
+  ]
+}

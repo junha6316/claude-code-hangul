@@ -1,0 +1,20 @@
+{
+  "cols": 120,
+  "cursorRow": 33,
+  "mustCover": [
+    1,
+    2,
+    5,
+    6,
+    9,
+    31,
+    35
+  ],
+  "mustNotCover": [
+    3,
+    8,
+    11,
+    33
+  ],
+  "source": "claude 2.1.299 실제 캡처: cd app && node test/fixtures/term/capture.js (가짜 키로 요청 → 인증 오류(실제 모델은 부르지 않음))"
+}

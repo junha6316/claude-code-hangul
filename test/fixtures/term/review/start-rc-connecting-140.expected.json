@@ -1,0 +1,15 @@
+{
+  "cols": 140,
+  "cursorRow": -1,
+  "mustCover": [
+    0,
+    1,
+    8,
+    9
+  ],
+  "mustNotCover": [
+    2,
+    6
+  ],
+  "source": "review/hook/runs/rD/caps/01-start.txt (claude 2.1.296, 10/13 캡처, 시작 직후(/rc connecting…, ← 2 agents)). 커서 위치는 기록되지 않아 -1"
+}

@@ -1,0 +1,21 @@
+{
+  "file": "../../screens/auth-error.txt",
+  "cols": 120,
+  "cursorRow": -1,
+  "mustCover": [
+    1,
+    2,
+    5,
+    6,
+    9,
+    31,
+    35
+  ],
+  "mustNotCover": [
+    3,
+    8,
+    11,
+    33
+  ],
+  "source": "test/fixtures/screens/auth-error.txt (T6 캡처, claude 2.1.296. 만든 방법은 그 폴더의 manifest.json). 커서 위치는 기록되지 않아 -1"
+}

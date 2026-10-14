@@ -1,0 +1,19 @@
+ ▐▛███▛█   Claude Code v2.1.296
+▝▜██████▀  Haiku 5.5 · Claude Team
+ ▝▝   ▝▝   ~/Projects/kct-hook-ws
+
+⚠ Your login expires in 3 days · run /login to renew
+
+⏺ Remote Control is disabled by your organization's policy. Contact your organization admin for access.
+
+❯ Run this exact bash command with the Bash tool: python3 -c 'print(1+1)'
+
+⏺ Bash(python3 -c 'print(1+1)')
+  ⎿  Interrupted · What should Claude do instead?
+
+✻ Sautéed for 1s · done 오후 6:39
+
+────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+❯
+────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+  ⏸ manual mode on · ? for shortcuts · ← 2 agents                                                                       ◐ medium · /effort

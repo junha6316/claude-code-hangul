@@ -1,0 +1,16 @@
+{
+  "session_id": "a5be2ada-1752-4818-93cd-dac4d25b5d57",
+  "transcript_path": "/Users/tester/.claude/projects/-Users-tester-Projects-kct-hook-ws/a5be2ada-1752-4818-93cd-dac4d25b5d57.jsonl",
+  "cwd": "/Users/tester/Projects/kct-hook-ws",
+  "scratchpad_dir": "/private/tmp/claude-501/-Users-tester-Projects-kct-hook-ws/a5be2ada-1752-4818-93cd-dac4d25b5d57/scratchpad",
+  "prompt_id": "5453796c-de64-4f69-a71f-1a865b04f501",
+  "permission_mode": "default",
+  "effort": {
+    "level": "medium"
+  },
+  "hook_event_name": "Stop",
+  "stop_hook_active": false,
+  "last_assistant_message": "I ran `touch f.txt` again. It completed with no output. `touch` only updates the timestamp on an existing file, so `f.txt` still exists and its content is unchanged.",
+  "background_tasks": [],
+  "session_crons": []
+}

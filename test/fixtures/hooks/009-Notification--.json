@@ -1,0 +1,10 @@
+{
+  "session_id": "a5be2ada-1752-4818-93cd-dac4d25b5d57",
+  "transcript_path": "/Users/tester/.claude/projects/-Users-tester-Projects-kct-hook-ws/a5be2ada-1752-4818-93cd-dac4d25b5d57.jsonl",
+  "cwd": "/Users/tester/Projects/kct-hook-ws",
+  "scratchpad_dir": "/private/tmp/claude-501/-Users-tester-Projects-kct-hook-ws/a5be2ada-1752-4818-93cd-dac4d25b5d57/scratchpad",
+  "prompt_id": "198ca6c3-681b-4bcd-8450-65af636f98eb",
+  "hook_event_name": "Notification",
+  "message": "Claude needs your permission",
+  "notification_type": "permission_prompt"
+}

@@ -1,0 +1,341 @@
+/* 화면 모양(T7). OS 밝기 설정(밝게·어둡게)을 따른다. 글자는 크고 또렷하게. */
+
+/* 터미널 한글 글꼴. 고정폭 영문 한 칸은 0.6em쯤이고 한글은 두 칸(1.2em)을 쓰는데, 한글 글꼴은 0.87em쯤이라
+   글자 사이가 벌어져 보인다. 한글 글자에만 이 글꼴을 쓰고 조금 키워서 두 칸을 거의 채운다.
+   unicode-range가 한글뿐이라 xterm이 칸 폭을 잴 때(영문 W)는 이 글꼴을 쓰지 않는다. */
+@font-face {
+  font-family: "KCT Hangul";
+  src: local("AppleSDGothicNeo-Regular"), local("Apple SD Gothic Neo Regular"), local("Apple SD Gothic Neo"),
+    local("Malgun Gothic"), local("MalgunGothicRegular"),
+    local("NotoSansCJKkr-Regular"), local("Noto Sans CJK KR Regular"), local("Noto Sans CJK KR"),
+    local("NanumGothic");
+  font-weight: 400;
+  size-adjust: 125%;
+  unicode-range: U+1100-11FF, U+3130-318F, U+A960-A97F, U+AC00-D7AF, U+D7B0-D7FF;
+}
+@font-face {
+  font-family: "KCT Hangul";
+  src: local("AppleSDGothicNeo-Bold"), local("Apple SD Gothic Neo Bold"),
+    local("Malgun Gothic Bold"), local("MalgunGothicBold"),
+    local("NotoSansCJKkr-Bold"), local("Noto Sans CJK KR Bold"),
+    local("NanumGothicBold");
+  font-weight: 700;
+  size-adjust: 125%;
+  unicode-range: U+1100-11FF, U+3130-318F, U+A960-A97F, U+AC00-D7AF, U+D7B0-D7FF;
+}
+
+:root {
+  --bg: #f6f6f3;
+  --surface: #ffffff;
+  --surface-2: #efefeb;
+  --text: #1d1d1f;
+  --muted: #555a60;
+  --border: #d6d6d0;
+  --accent: #1f5fd6;
+  --accent-text: #ffffff;
+  --accent-soft: #e6eefc;
+  --warn: #b25e00;
+  --warn-soft: #fff1dc;
+  --danger: #c0262d;
+  --danger-soft: #fdeaea;
+  --ok: #1e7a3c;
+  --focus: #1f5fd6;
+  --term-bg: #ffffff;
+  --term-fg: #1d1d1f;
+  --term-cursor: #1f5fd6;
+  --term-selection: rgba(31, 95, 214, 0.25);
+
+  --font-ui: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Pretendard", "Noto Sans KR",
+    "Malgun Gothic", "맑은 고딕", "Segoe UI", sans-serif;
+  --radius: 10px;
+  color-scheme: light;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #1b1c1f;
+    --surface: #24262a;
+    --surface-2: #2c2e33;
+    --text: #ececec;
+    --muted: #a7abb2;
+    --border: #3b3e44;
+    --accent: #5b93ff;
+    --accent-text: #0d1117;
+    --accent-soft: #22324f;
+    --warn: #ffb347;
+    --warn-soft: #3a2c16;
+    --danger: #ff6b6b;
+    --danger-soft: #3d2020;
+    --ok: #5fd28a;
+    --focus: #8ab4ff;
+    --term-bg: #16171a;
+    --term-fg: #e6e6e6;
+    --term-cursor: #8ab4ff;
+    --term-selection: rgba(138, 180, 255, 0.3);
+    color-scheme: dark;
+  }
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  height: 100%;
+  overflow: hidden;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-ui);
+  font-size: 16px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+#app {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+[hidden] { display: none !important; }
+
+/* ── 버튼 ── */
+.btn {
+  font: inherit;
+  font-size: 15px;
+  font-weight: 600;
+  min-height: 38px;
+  padding: 6px 14px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text);
+  cursor: pointer;
+  white-space: nowrap;
+}
+.btn:hover { background: var(--surface-2); }
+.btn:focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; }
+.btn:disabled { opacity: 0.55; cursor: default; }
+.btn.primary { background: var(--accent); border-color: var(--accent); color: var(--accent-text); }
+.btn.primary:hover { filter: brightness(1.08); }
+.btn.danger { background: var(--danger); border-color: var(--danger); color: #fff; }
+.btn.big { font-size: 17px; min-height: 46px; padding: 8px 24px; }
+
+/* ── 위 막대 ── */
+#topbar {
+  flex: none;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 10px 16px;
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+  min-width: 0;
+}
+.folder {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 17px;
+  font-weight: 700;
+  min-width: 0;
+  flex: 0 1 auto;
+}
+#folder-name { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; max-width: 220px; }
+.context {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+  flex: 1 1 auto;
+  font-size: 15px;
+  color: var(--muted);
+  white-space: nowrap;
+}
+.meter {
+  width: 120px;
+  min-width: 60px;
+  flex: 0 1 120px;
+  height: 10px;
+  border-radius: 5px;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  overflow: hidden;
+}
+.meter-fill {
+  height: 100%;
+  width: 0%;
+  background: var(--accent);
+  transition: width 0.3s ease;
+}
+.context-text { font-weight: 700; color: var(--text); font-variant-numeric: tabular-nums; }
+.context.warn .meter-fill { background: var(--warn); }
+.context.warn .context-text { color: var(--warn); }
+.context-hint {
+  color: var(--warn);
+  font-weight: 700;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.top-actions { display: flex; gap: 8px; flex: none; margin-left: auto; }
+
+/* ── 가운데 터미널 + 오른쪽 패널 ── */
+#workspace {
+  flex: 1 1 auto;
+  min-height: 0;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) clamp(260px, 30vw, 360px);
+}
+#terminal-wrap {
+  min-width: 0;
+  min-height: 0;
+  padding: 10px 6px 10px 12px;
+  background: var(--term-bg);
+  display: flex;
+}
+#terminal { flex: 1 1 auto; min-width: 0; min-height: 0; }
+#terminal .xterm { height: 100%; }
+#terminal .xterm-viewport { background-color: var(--term-bg) !important; }
+
+/* ── 영어 줄 덮개(overlay.js) ──
+   .xterm-screen 위에 겹친다. 줄 글자·선택 표시보다 위, 한글 조합 중 글자(.xterm-helpers, z-index 5)보다 아래.
+   보이기만 하고 마우스는 받지 않아서 클릭·선택·입력은 터미널로 간다. 글꼴·크기·줄 높이는 overlay.js가 터미널 것으로 맞춘다. */
+#kct-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  pointer-events: none;
+  overflow: hidden;
+}
+.kct-ko {
+  position: absolute;
+  pointer-events: none;
+  overflow: hidden;
+  white-space: pre;
+  background: var(--term-bg); /* 밑의 영어가 비치지 않게 */
+  color: var(--term-fg);
+}
+.kct-ko[data-kind="hint"],
+.kct-ko[data-kind="footer"] { color: var(--muted); }
+
+#panel {
+  min-width: 0;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 12px;
+  background: var(--bg);
+  border-left: 1px solid var(--border);
+  overflow: hidden;
+}
+/* 허락 카드는 맨 위에 고정. 많으면 이 칸 안에서만 넘긴다. */
+#perm-area {
+  flex: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-height: 60%;
+  overflow-y: auto;
+}
+#perm-area:empty { display: none; }
+#guide-area { flex: none; max-height: 45%; overflow-y: auto; }
+#log-area { flex: 1 1 auto; min-height: 0; display: flex; flex-direction: column; }
+
+.panel-title { margin: 0 0 6px; font-size: 16px; font-weight: 700; }
+
+/* ── 카드 ── */
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 12px 14px;
+}
+.card-label {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--muted);
+  margin-bottom: 4px;
+}
+.card h3 { margin: 0 0 6px; font-size: 17px; line-height: 1.4; }
+.card .detail {
+  margin: 0 0 10px;
+  font-size: 15px;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  max-height: 9em;
+  overflow-y: auto;
+}
+.card .actions { display: flex; flex-wrap: wrap; gap: 8px; }
+.card .actions .btn { flex: 1 1 auto; }
+.card .answered { font-weight: 700; color: var(--muted); }
+
+.card.perm { border: 2px solid var(--accent); background: var(--accent-soft); }
+.card.perm .card-label { color: var(--accent); }
+.card.perm.danger { border-color: var(--danger); background: var(--danger-soft); }
+.card.perm.danger .card-label { color: var(--danger); }
+
+.card.guide { border: 2px solid var(--warn); background: var(--warn-soft); }
+.card.guide .card-label { color: var(--warn); }
+.card.guide p { margin: 0 0 10px; font-size: 15px; white-space: pre-wrap; }
+
+/* ── 진행 기록 ── */
+.log-empty { margin: 0; color: var(--muted); font-size: 15px; }
+.log {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  overflow-y: auto;
+  min-height: 0;
+  flex: 1 1 auto;
+}
+.log li {
+  display: grid;
+  grid-template-columns: 1.6em minmax(0, 1fr) auto;
+  gap: 6px;
+  align-items: baseline;
+  padding: 7px 2px;
+  border-bottom: 1px solid var(--border);
+  font-size: 15px;
+}
+.log li .icon { text-align: center; }
+.log li .text { overflow-wrap: anywhere; }
+.log li time { color: var(--muted); font-size: 13px; font-variant-numeric: tabular-nums; }
+
+/* ── 설치 덮개 ── */
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background: var(--bg);
+}
+.install-card {
+  width: min(560px, 100%);
+  max-height: 100%;
+  overflow-y: auto;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 28px 30px;
+}
+.install-card h1 { margin: 0 0 12px; font-size: 24px; line-height: 1.35; }
+.install-desc { margin: 0 0 8px; font-size: 16px; }
+.install-phase { margin: 14px 0; font-weight: 700; min-height: 1.5em; }
+.install-phase.error { color: var(--danger); }
+.install-phase.ok { color: var(--ok); }
+.install-log {
+  margin: 16px 0 0;
+  max-height: 180px;
+  overflow: auto;
+  padding: 10px 12px;
+  border-radius: 8px;
+  background: var(--surface-2);
+  font-family: "SF Mono", Menlo, Consolas, "D2Coding", monospace;
+  font-size: 13px;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}

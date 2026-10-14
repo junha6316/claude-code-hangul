@@ -1,0 +1,23 @@
+{
+  "cols": 140,
+  "cursorRow": -1,
+  "mustCover": [
+    0,
+    1,
+    5,
+    12,
+    17,
+    18,
+    19,
+    20,
+    22
+  ],
+  "mustNotCover": [
+    2,
+    7,
+    9,
+    13,
+    15
+  ],
+  "source": "review/hook/runs/rD/caps/10-write-after-hook-timeout.txt (claude 2.1.296, 10/13 캡처, 파일 만들기 허락 창(accept edits 선택지)). 커서 위치는 기록되지 않아 -1"
+}

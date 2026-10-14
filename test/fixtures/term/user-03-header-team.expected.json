@@ -1,0 +1,17 @@
+{
+  "file": "user/03-header-team.txt",
+  "cols": 120,
+  "cursorRow": -1,
+  "mustCover": [
+    0,
+    1,
+    4,
+    6,
+    9
+  ],
+  "mustNotCover": [
+    2,
+    7
+  ],
+  "source": "user/03-header-team.txt (사용자가 붙여 넣은 머리말·로그인 만료·회사 안내·조직 정책 줄(앞의 로고 글자는 붙여 넣을 때 빠짐)). 붙여 넣은 글이라 커서 위치를 모름"
+}

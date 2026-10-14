@@ -1,0 +1,36 @@
+
+           Claude Code v2.1.296
+ ▐▂███▂█   Opus 5.5 · API Usage Billing
+~▜██████~  ~/Projects/korean-claude-terminal/app/.test-tmp/T6/cap/trusted/work
+
+⚠ Remote managed settings failed to load (authentication rejected (401)) · no remote policy applied · /status for
+  details
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                                                                    ◐ medium · /effort
+────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+❯ Try "fix typecheck errors"
+────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+  ⏸ manual mode on · ? for shortcuts · ← for agents

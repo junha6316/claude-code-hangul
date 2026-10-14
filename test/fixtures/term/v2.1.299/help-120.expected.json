@@ -1,0 +1,27 @@
+{
+  "cols": 120,
+  "cursorRow": 20,
+  "mustCover": [
+    1,
+    2,
+    5,
+    6,
+    35
+  ],
+  "mustNotCover": [
+    3,
+    20,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    30,
+    31,
+    33
+  ],
+  "source": "claude 2.1.299 실제 캡처: cd app && node test/fixtures/term/capture.js (/help 화면)"
+}

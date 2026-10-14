@@ -1,0 +1,14 @@
+{
+  "cols": 80,
+  "cursorRow": 9,
+  "mustCover": [
+    2,
+    4,
+    5,
+    7,
+    8,
+    11
+  ],
+  "mustNotCover": [],
+  "source": "claude 2.1.299 실제 캡처: cd app && node test/fixtures/term/capture.js (믿는 작업 폴더에 .mcp.json(서버 1개))"
+}

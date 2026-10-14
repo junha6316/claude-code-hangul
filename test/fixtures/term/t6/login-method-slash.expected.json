@@ -1,0 +1,28 @@
+{
+  "file": "../../screens/login-method-slash.txt",
+  "cols": 120,
+  "cursorRow": -1,
+  "mustCover": [
+    0,
+    1,
+    4,
+    5,
+    6,
+    10,
+    17,
+    19,
+    21,
+    23,
+    24,
+    25,
+    27
+  ],
+  "mustNotCover": [
+    2,
+    7,
+    9,
+    12,
+    14
+  ],
+  "source": "test/fixtures/screens/login-method-slash.txt (T6 캡처, claude 2.1.296. 만든 방법은 그 폴더의 manifest.json). 커서 위치는 기록되지 않아 -1"
+}

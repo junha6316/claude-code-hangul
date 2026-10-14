@@ -1,0 +1,26 @@
+{
+  "cols": 100,
+  "cursorRow": -1,
+  "mustCover": [
+    0,
+    6,
+    7,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19
+  ],
+  "mustNotCover": [
+    1,
+    2,
+    3,
+    4,
+    8,
+    10
+  ],
+  "source": "review/korean-input-refute/out/perm_plain.txt#dialog_screen (claude 2.1.296, 10/13 캡처, 100칸 명령 실행 허락 창(선택지가 세 줄로 접힘)). 커서 위치는 기록되지 않아 -1"
+}

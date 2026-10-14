@@ -1,0 +1,37 @@
+{
+  "file": "../../screens/permission-bash.txt",
+  "cols": 140,
+  "cursorRow": -1,
+  "mustCover": [
+    31,
+    32,
+    37,
+    38,
+    39,
+    40,
+    41,
+    43
+  ],
+  "mustNotCover": [
+    1,
+    2,
+    3,
+    5,
+    7,
+    9,
+    10,
+    11,
+    13,
+    15,
+    17,
+    19,
+    20,
+    21,
+    23,
+    25,
+    27,
+    28,
+    35
+  ],
+  "source": "test/fixtures/screens/permission-bash.txt (T6 캡처, claude 2.1.296. 만든 방법은 그 폴더의 manifest.json). 커서 위치는 기록되지 않아 -1"
+}

@@ -1,0 +1,18 @@
+{
+  "cols": 120,
+  "cursorRow": 33,
+  "mustCover": [
+    1,
+    2,
+    5,
+    6,
+    8,
+    31,
+    35
+  ],
+  "mustNotCover": [
+    3,
+    33
+  ],
+  "source": "claude 2.1.299 실제 캡처: cd app && node test/fixtures/term/capture.js (입력 대기에서 shift+tab 3번)"
+}

@@ -1,0 +1,16 @@
+{
+  "file": "user/02-mcp-new-server.txt",
+  "cols": 82,
+  "cursorRow": -1,
+  "mustCover": [
+    0,
+    2,
+    3,
+    5,
+    6,
+    7,
+    9
+  ],
+  "mustNotCover": [],
+  "source": "user/02-mcp-new-server.txt (사용자가 붙여 넣은 새 MCP 서버 창(~/.mcp.json의 bigquery)). 붙여 넣은 글이라 커서 위치를 모름"
+}

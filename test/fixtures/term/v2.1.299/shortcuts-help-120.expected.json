@@ -1,0 +1,23 @@
+{
+  "cols": 120,
+  "cursorRow": 27,
+  "mustCover": [
+    1,
+    2,
+    5,
+    6,
+    25
+  ],
+  "mustNotCover": [
+    3,
+    27,
+    29,
+    30,
+    31,
+    32,
+    33,
+    34,
+    35
+  ],
+  "source": "claude 2.1.299 실제 캡처: cd app && node test/fixtures/term/capture.js (빈 입력 칸에서 ? 를 눌러 연 단축키 도움말)"
+}

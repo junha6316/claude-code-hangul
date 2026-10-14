@@ -1,0 +1,20 @@
+{
+  "file": "user/01-trust.txt",
+  "cols": 82,
+  "cursorRow": -1,
+  "mustCover": [
+    0,
+    4,
+    5,
+    6,
+    8,
+    10,
+    12,
+    13,
+    15
+  ],
+  "mustNotCover": [
+    2
+  ],
+  "source": "user/01-trust.txt (사용자가 실제 계정(Team, claude 2.1.299)으로 앱을 띄워 붙여 넣은 신뢰 창. 80칸 언저리에서 접힘). 붙여 넣은 글이라 커서 위치를 모름"
+}

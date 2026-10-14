@@ -1,0 +1,22 @@
+ ▐▛███▛█   Claude Code v2.1.296
+▝▜██████▀  Haiku 5.5 · Claude Team
+ ▝▝   ▝▝   ~/Projects/kct-hook-ws
+
+
+⏺ Remote Control is disabled by your organization's policy. Contact your organization admin for access.
+
+❯ Use the Write tool to create a.txt containing exactly: hello. Do nothing else.
+
+⏺ Write(a.txt)
+  ⎿  Wrote 1 line to a.txt
+      1 hello
+  ⎿  Allowed by PermissionRequest hook
+
+⏺ I created /Users/tester/Projects/kct-hook-ws/a.txt with the content hello. Nothing else was done.
+
+✻ Brewed for 3s · done 오후 6:24
+
+────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+❯ 
+────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+  ⏸ manual mode on · ? for shortcuts · ← 2 agents                                                                       ◐ medium · /effort

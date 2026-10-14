@@ -1,0 +1,28 @@
+ ▐▛███▛█   Claude Code v2.1.296
+▝▜██████▀  Opus 5.5 · API Usage Billing
+ ▝▝   ▝▝   ~/Projects/korean-claude-terminal/app/.test-tmp/T6/cap/logged-out/work
+
+▎ Auto mode is now Claude Code's default permission mode.
+▎ Auto mode lets Claude handle permission prompts automatically. Claude checks each tool call for risky actions and
+▎ prompt injection before executing, runs the ones it assesses as lower-risk, and blocks the rest.
+▎ https://code.claude.com/docs/en/permission-modes
+
+❯ 안녕하세요
+  ⎿  Not logged in · Please run /login
+
+✻ Cogitated for 0s · done 오전 9:52
+
+❯ /login
+
+────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+  Login
+
+  Claude Code can be used with your Claude subscription or billed based on API usage through your Console account.
+
+  Select login method:
+
+  ❯ 1. Claude account with subscription · Pro, Max, Team, or Enterprise
+    2. Anthropic Console account · API usage billing
+    3. 3rd-party platform · Amazon Bedrock, Microsoft Foundry, Google Vertex AI
+
+  Esc to cancel

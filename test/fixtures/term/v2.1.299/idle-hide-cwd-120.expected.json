@@ -1,0 +1,16 @@
+{
+  "cols": 120,
+  "cursorRow": 33,
+  "mustCover": [
+    2,
+    3,
+    5,
+    6,
+    31,
+    35
+  ],
+  "mustNotCover": [
+    33
+  ],
+  "source": "claude 2.1.299 실제 캡처: cd app && node test/fixtures/term/capture.js (CLAUDE_CODE_HIDE_CWD=1로 띄운 입력 대기(머리말에 경로 없음))"
+}

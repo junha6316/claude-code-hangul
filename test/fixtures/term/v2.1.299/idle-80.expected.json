@@ -1,0 +1,16 @@
+{
+  "cols": 80,
+  "cursorRow": 27,
+  "mustCover": [
+    1,
+    2,
+    5,
+    6,
+    25,
+    29
+  ],
+  "mustNotCover": [
+    27
+  ],
+  "source": "claude 2.1.299 실제 캡처: cd app && node test/fixtures/term/capture.js (믿는 폴더 입력 대기(머리말, 모드 줄))"
+}

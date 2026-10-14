@@ -1,0 +1,10 @@
+ Claude Code v2.1.299
+  Opus 5.5 (1M context) with xhigh effort · Claude Team
+  ~/Documents/작업실
+
+⚠ Your login expires in 3 days · run /login to renew
+
+▎ Message from Acme:
+▎ 안녕하세요! 하고 싶은 일을 한국어로 편하게 적어 주세요.
+
+⏺ Remote Control is disabled by your organization's policy. Contact your organization admin for access.

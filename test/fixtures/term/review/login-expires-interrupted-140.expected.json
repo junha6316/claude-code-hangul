@@ -1,0 +1,20 @@
+{
+  "cols": 140,
+  "cursorRow": -1,
+  "mustCover": [
+    0,
+    1,
+    4,
+    6,
+    11,
+    18
+  ],
+  "mustNotCover": [
+    2,
+    8,
+    10,
+    13,
+    16
+  ],
+  "source": "review/hook-verify/11-after-esc.txt (claude 2.1.296, 10/13 캡처, 로그인 만료 안내 + Interrupted 줄). 커서 위치는 기록되지 않아 -1"
+}

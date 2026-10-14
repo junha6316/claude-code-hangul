@@ -1,0 +1,15 @@
+# T8 설치 시험용 깨끗한 Linux 이미지: node 24 + curl만 넣는다.
+# 호스트의 ~/.claude는 붙이지 않고, sudo 없는 보통 사용자(node)로 돈다.
+# 빌드·실행은 test/container/run-installer-test.sh가 --platform linux/arm64로 한다.
+FROM node:24-bookworm-slim
+
+RUN apt-get update \
+ && apt-get install -y --no-install-recommends curl ca-certificates \
+ && rm -rf /var/lib/apt/lists/*
+
+USER node
+WORKDIR /home/node/kct
+# 빌드 맥락은 run-installer-test.sh가 만든 작은 폴더다(installer.js, env.js, contracts.js, driver.js).
+COPY --chown=node:node . .
+
+CMD ["sleep", "infinity"]

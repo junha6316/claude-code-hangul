@@ -1,0 +1,23 @@
+{
+  "cols": 120,
+  "cursorRow": 18,
+  "mustCover": [
+    0,
+    1,
+    4,
+    5,
+    6,
+    12,
+    14,
+    16,
+    19,
+    20,
+    22
+  ],
+  "mustNotCover": [
+    2,
+    7,
+    9
+  ],
+  "source": "claude 2.1.299 실제 캡처: cd app && node test/fixtures/term/capture.js (/login으로 연 로그인 방법 고르기)"
+}

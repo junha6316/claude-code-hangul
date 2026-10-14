@@ -1,0 +1,973 @@
+{
+  "claudeVersion": "2.1.299 (Claude Code)",
+  "capturedAt": "2026-10-14T06:59:15.806Z",
+  "command": "cd app && node test/fixtures/term/capture.js",
+  "how": "fakeClaudeHome(가짜 CLAUDE_CONFIG_DIR, 가짜 키, lastReleaseNotesSeen을 지금 버전으로) + tmux(-L 고유 소켓, -u). env에 BROWSER=/usr/bin/true. 키는 tmux send-keys -H로 바이트 그대로 보냄(1b 5b 5a는 shift+tab). 커서 위치는 화면을 찍는 tmux 호출에서 같이 읽음(capture-pane ; display-message #{cursor_x} #{cursor_y} #{cursor_flag}). 화면마다 찍은 시각은 screens[].capturedAt. 홈 폴더 경로는 /Users/tester로 바꾸고 줄 끝 공백만 지움.",
+  "screens": [
+    {
+      "file": "api-key-120.txt",
+      "note": "가짜 키를 쓸지 묻기(키 미승인, 테마에서 Enter)",
+      "launch": {
+        "onboarded": false,
+        "withKey": true,
+        "approveKey": false,
+        "trusted": false,
+        "cols": 120,
+        "rows": 36,
+        "mcp": null,
+        "env": []
+      },
+      "before": [
+        {
+          "keys": "\r",
+          "hex": "0d"
+        }
+      ],
+      "cursor": {
+        "x": 2,
+        "y": 26,
+        "visible": false
+      },
+      "rows": 36,
+      "capturedAt": "2026-10-14T06:58:47.263Z"
+    },
+    {
+      "file": "api-key-80.txt",
+      "note": "가짜 키를 쓸지 묻기(키 미승인, 테마에서 Enter)",
+      "launch": {
+        "onboarded": false,
+        "withKey": true,
+        "approveKey": false,
+        "trusted": false,
+        "cols": 80,
+        "rows": 30,
+        "mcp": null,
+        "env": []
+      },
+      "before": [
+        {
+          "keys": "\r",
+          "hex": "0d"
+        }
+      ],
+      "cursor": {
+        "x": 2,
+        "y": 26,
+        "visible": false
+      },
+      "rows": 30,
+      "capturedAt": "2026-10-14T06:58:18.264Z"
+    },
+    {
+      "file": "auth-error-120.txt",
+      "note": "가짜 키로 요청 → 인증 오류(실제 모델은 부르지 않음)",
+      "launch": {
+        "onboarded": true,
+        "withKey": true,
+        "approveKey": true,
+        "trusted": true,
+        "cols": 120,
+        "rows": 36,
+        "mcp": null,
+        "env": []
+      },
+      "before": [
+        {
+          "keys": "안녕하세요",
+          "hex": "ec 95 88 eb 85 95 ed 95 98 ec 84 b8 ec 9a 94"
+        },
+        {
+          "keys": "\r",
+          "hex": "0d"
+        }
+      ],
+      "cursor": {
+        "x": 2,
+        "y": 33,
+        "visible": true
+      },
+      "rows": 36,
+      "capturedAt": "2026-10-14T06:59:15.782Z"
+    },
+    {
+      "file": "auth-error-80.txt",
+      "note": "가짜 키로 요청 → 인증 오류(실제 모델은 부르지 않음)",
+      "launch": {
+        "onboarded": true,
+        "withKey": true,
+        "approveKey": true,
+        "trusted": true,
+        "cols": 80,
+        "rows": 30,
+        "mcp": null,
+        "env": []
+      },
+      "before": [
+        {
+          "keys": "안녕하세요",
+          "hex": "ec 95 88 eb 85 95 ed 95 98 ec 84 b8 ec 9a 94"
+        },
+        {
+          "keys": "\r",
+          "hex": "0d"
+        }
+      ],
+      "cursor": {
+        "x": 2,
+        "y": 27,
+        "visible": true
+      },
+      "rows": 30,
+      "capturedAt": "2026-10-14T06:58:38.197Z"
+    },
+    {
+      "file": "help-120.txt",
+      "note": "/help 화면",
+      "launch": {
+        "onboarded": true,
+        "withKey": true,
+        "approveKey": true,
+        "trusted": true,
+        "cols": 120,
+        "rows": 36,
+        "mcp": null,
+        "env": []
+      },
+      "before": [
+        {
+          "keys": "/",
+          "hex": "2f"
+        },
+        {
+          "keys": "",
+          "hex": "7f"
+        },
+        {
+          "keys": "?",
+          "hex": "3f"
+        },
+        {
+          "keys": "",
+          "hex": "7f"
+        },
+        {
+          "keys": "/help",
+          "hex": "2f 68 65 6c 70"
+        },
+        {
+          "keys": "\r",
+          "hex": "0d"
+        }
+      ],
+      "cursor": {
+        "x": 9,
+        "y": 20,
+        "visible": false
+      },
+      "rows": 36,
+      "capturedAt": "2026-10-14T06:59:06.347Z"
+    },
+    {
+      "file": "idle-120.txt",
+      "note": "믿는 폴더 입력 대기(머리말, 모드 줄)",
+      "launch": {
+        "onboarded": true,
+        "withKey": true,
+        "approveKey": true,
+        "trusted": true,
+        "cols": 120,
+        "rows": 36,
+        "mcp": null,
+        "env": []
+      },
+      "before": [],
+      "cursor": {
+        "x": 2,
+        "y": 33,
+        "visible": true
+      },
+      "rows": 36,
+      "capturedAt": "2026-10-14T06:58:57.155Z"
+    },
+    {
+      "file": "idle-80.txt",
+      "note": "믿는 폴더 입력 대기(머리말, 모드 줄)",
+      "launch": {
+        "onboarded": true,
+        "withKey": true,
+        "approveKey": true,
+        "trusted": true,
+        "cols": 80,
+        "rows": 30,
+        "mcp": null,
+        "env": []
+      },
+      "before": [],
+      "cursor": {
+        "x": 2,
+        "y": 27,
+        "visible": true
+      },
+      "rows": 30,
+      "capturedAt": "2026-10-14T06:58:28.668Z"
+    },
+    {
+      "file": "idle-hide-cwd-120.txt",
+      "note": "CLAUDE_CODE_HIDE_CWD=1로 띄운 입력 대기(머리말에 경로 없음)",
+      "launch": {
+        "onboarded": true,
+        "withKey": true,
+        "approveKey": true,
+        "trusted": true,
+        "cols": 120,
+        "rows": 36,
+        "mcp": null,
+        "env": [
+          "CLAUDE_CODE_HIDE_CWD"
+        ]
+      },
+      "before": [],
+      "cursor": {
+        "x": 2,
+        "y": 33,
+        "visible": true
+      },
+      "rows": 36,
+      "capturedAt": "2026-10-14T06:59:08.384Z"
+    },
+    {
+      "file": "idle-hide-cwd-80.txt",
+      "note": "CLAUDE_CODE_HIDE_CWD=1로 띄운 입력 대기(머리말에 경로 없음)",
+      "launch": {
+        "onboarded": true,
+        "withKey": true,
+        "approveKey": true,
+        "trusted": true,
+        "cols": 80,
+        "rows": 30,
+        "mcp": null,
+        "env": [
+          "CLAUDE_CODE_HIDE_CWD"
+        ]
+      },
+      "before": [],
+      "cursor": {
+        "x": 2,
+        "y": 27,
+        "visible": true
+      },
+      "rows": 30,
+      "capturedAt": "2026-10-14T06:58:34.319Z"
+    },
+    {
+      "file": "logged-out-120.txt",
+      "note": "로그인 안 한 입력 대기(키 없음)",
+      "launch": {
+        "onboarded": true,
+        "withKey": false,
+        "approveKey": true,
+        "trusted": true,
+        "cols": 120,
+        "rows": 36,
+        "mcp": null,
+        "env": []
+      },
+      "before": [],
+      "cursor": {
+        "x": 2,
+        "y": 10,
+        "visible": false
+      },
+      "rows": 36,
+      "capturedAt": "2026-10-14T06:59:09.574Z"
+    },
+    {
+      "file": "logged-out-80.txt",
+      "note": "로그인 안 한 입력 대기(키 없음)",
+      "launch": {
+        "onboarded": true,
+        "withKey": false,
+        "approveKey": true,
+        "trusted": true,
+        "cols": 80,
+        "rows": 30,
+        "mcp": null,
+        "env": []
+      },
+      "before": [],
+      "cursor": {
+        "x": 2,
+        "y": 11,
+        "visible": false
+      },
+      "rows": 30,
+      "capturedAt": "2026-10-14T06:57:50.649Z"
+    },
+    {
+      "file": "login-browser-120.txt",
+      "note": "구독 계정 로그인을 고른 뒤 브라우저 로그인 대기",
+      "launch": {
+        "onboarded": false,
+        "withKey": false,
+        "approveKey": true,
+        "trusted": false,
+        "cols": 120,
+        "rows": 36,
+        "mcp": null,
+        "env": []
+      },
+      "before": [
+        {
+          "keys": "\r",
+          "hex": "0d"
+        },
+        {
+          "keys": "\r",
+          "hex": "0d"
+        }
+      ],
+      "cursor": {
+        "x": 0,
+        "y": 26,
+        "visible": false
+      },
+      "rows": 36,
+      "capturedAt": "2026-10-14T06:58:44.121Z"
+    },
+    {
+      "file": "login-browser-80.txt",
+      "note": "구독 계정 로그인을 고른 뒤 브라우저 로그인 대기",
+      "launch": {
+        "onboarded": false,
+        "withKey": false,
+        "approveKey": true,
+        "trusted": false,
+        "cols": 80,
+        "rows": 30,
+        "mcp": null,
+        "env": []
+      },
+      "before": [
+        {
+          "keys": "\r",
+          "hex": "0d"
+        },
+        {
+          "keys": "\r",
+          "hex": "0d"
+        }
+      ],
+      "cursor": {
+        "x": 0,
+        "y": 28,
+        "visible": false
+      },
+      "rows": 30,
+      "capturedAt": "2026-10-14T06:58:16.075Z"
+    },
+    {
+      "file": "login-method-120.txt",
+      "note": "로그인 방법 고르기(테마에서 Enter)",
+      "launch": {
+        "onboarded": false,
+        "withKey": false,
+        "approveKey": true,
+        "trusted": false,
+        "cols": 120,
+        "rows": 36,
+        "mcp": null,
+        "env": []
+      },
+      "before": [
+        {
+          "keys": "\r",
+          "hex": "0d"
+        }
+      ],
+      "cursor": {
+        "x": 1,
+        "y": 21,
+        "visible": false
+      },
+      "rows": 36,
+      "capturedAt": "2026-10-14T06:58:40.414Z"
+    },
+    {
+      "file": "login-method-80.txt",
+      "note": "로그인 방법 고르기(테마에서 Enter)",
+      "launch": {
+        "onboarded": false,
+        "withKey": false,
+        "approveKey": true,
+        "trusted": false,
+        "cols": 80,
+        "rows": 30,
+        "mcp": null,
+        "env": []
+      },
+      "before": [
+        {
+          "keys": "\r",
+          "hex": "0d"
+        }
+      ],
+      "cursor": {
+        "x": 1,
+        "y": 22,
+        "visible": false
+      },
+      "rows": 30,
+      "capturedAt": "2026-10-14T06:58:12.302Z"
+    },
+    {
+      "file": "login-slash-120.txt",
+      "note": "/login으로 연 로그인 방법 고르기",
+      "launch": {
+        "onboarded": true,
+        "withKey": false,
+        "approveKey": true,
+        "trusted": true,
+        "cols": 120,
+        "rows": 36,
+        "mcp": null,
+        "env": []
+      },
+      "before": [
+        {
+          "keys": "/login",
+          "hex": "2f 6c 6f 67 69 6e"
+        },
+        {
+          "keys": "\r",
+          "hex": "0d"
+        }
+      ],
+      "cursor": {
+        "x": 2,
+        "y": 18,
+        "visible": false
+      },
+      "rows": 36,
+      "capturedAt": "2026-10-14T06:59:10.933Z"
+    },
+    {
+      "file": "login-slash-80.txt",
+      "note": "/login으로 연 로그인 방법 고르기",
+      "launch": {
+        "onboarded": true,
+        "withKey": false,
+        "approveKey": true,
+        "trusted": true,
+        "cols": 80,
+        "rows": 30,
+        "mcp": null,
+        "env": []
+      },
+      "before": [
+        {
+          "keys": "/login",
+          "hex": "2f 6c 6f 67 69 6e"
+        },
+        {
+          "keys": "\r",
+          "hex": "0d"
+        }
+      ],
+      "cursor": {
+        "x": 2,
+        "y": 20,
+        "visible": false
+      },
+      "rows": 30,
+      "capturedAt": "2026-10-14T06:57:52.038Z"
+    },
+    {
+      "file": "mcp-new-server-120.txt",
+      "note": "믿는 작업 폴더에 .mcp.json(서버 1개)",
+      "launch": {
+        "onboarded": true,
+        "withKey": true,
+        "approveKey": true,
+        "trusted": true,
+        "cols": 120,
+        "rows": 36,
+        "mcp": [
+          "demo-server"
+        ],
+        "env": []
+      },
+      "before": [],
+      "cursor": {
+        "x": 2,
+        "y": 9,
+        "visible": false
+      },
+      "rows": 36,
+      "capturedAt": "2026-10-14T06:58:53.371Z"
+    },
+    {
+      "file": "mcp-new-server-80.txt",
+      "note": "믿는 작업 폴더에 .mcp.json(서버 1개)",
+      "launch": {
+        "onboarded": true,
+        "withKey": true,
+        "approveKey": true,
+        "trusted": true,
+        "cols": 80,
+        "rows": 30,
+        "mcp": [
+          "demo-server"
+        ],
+        "env": []
+      },
+      "before": [],
+      "cursor": {
+        "x": 2,
+        "y": 9,
+        "visible": false
+      },
+      "rows": 30,
+      "capturedAt": "2026-10-14T06:58:23.313Z"
+    },
+    {
+      "file": "mcp-new-servers-120.txt",
+      "note": "믿는 작업 폴더에 .mcp.json(서버 2개)",
+      "launch": {
+        "onboarded": true,
+        "withKey": true,
+        "approveKey": true,
+        "trusted": true,
+        "cols": 120,
+        "rows": 36,
+        "mcp": [
+          "demo-server",
+          "notes-server"
+        ],
+        "env": []
+      },
+      "before": [],
+      "cursor": {
+        "x": 2,
+        "y": 8,
+        "visible": false
+      },
+      "rows": 36,
+      "capturedAt": "2026-10-14T06:58:55.109Z"
+    },
+    {
+      "file": "mcp-new-servers-80.txt",
+      "note": "믿는 작업 폴더에 .mcp.json(서버 2개)",
+      "launch": {
+        "onboarded": true,
+        "withKey": true,
+        "approveKey": true,
+        "trusted": true,
+        "cols": 80,
+        "rows": 30,
+        "mcp": [
+          "demo-server",
+          "notes-server"
+        ],
+        "env": []
+      },
+      "before": [],
+      "cursor": {
+        "x": 2,
+        "y": 8,
+        "visible": false
+      },
+      "rows": 30,
+      "capturedAt": "2026-10-14T06:58:26.136Z"
+    },
+    {
+      "file": "mode-accept-edits-120.txt",
+      "note": "입력 대기에서 shift+tab 1번",
+      "launch": {
+        "onboarded": true,
+        "withKey": true,
+        "approveKey": true,
+        "trusted": true,
+        "cols": 120,
+        "rows": 36,
+        "mcp": null,
+        "env": []
+      },
+      "before": [
+        {
+          "keys": "\u001b[Z",
+          "hex": "1b 5b 5a"
+        }
+      ],
+      "cursor": {
+        "x": 2,
+        "y": 33,
+        "visible": true
+      },
+      "rows": 36,
+      "capturedAt": "2026-10-14T06:58:58.007Z"
+    },
+    {
+      "file": "mode-accept-edits-80.txt",
+      "note": "입력 대기에서 shift+tab 1번",
+      "launch": {
+        "onboarded": true,
+        "withKey": true,
+        "approveKey": true,
+        "trusted": true,
+        "cols": 80,
+        "rows": 30,
+        "mcp": null,
+        "env": []
+      },
+      "before": [
+        {
+          "keys": "\u001b[Z",
+          "hex": "1b 5b 5a"
+        }
+      ],
+      "cursor": {
+        "x": 2,
+        "y": 27,
+        "visible": true
+      },
+      "rows": 30,
+      "capturedAt": "2026-10-14T06:58:29.576Z"
+    },
+    {
+      "file": "mode-auto-mode-120.txt",
+      "note": "입력 대기에서 shift+tab 3번",
+      "launch": {
+        "onboarded": true,
+        "withKey": true,
+        "approveKey": true,
+        "trusted": true,
+        "cols": 120,
+        "rows": 36,
+        "mcp": null,
+        "env": []
+      },
+      "before": [
+        {
+          "keys": "\u001b[Z",
+          "hex": "1b 5b 5a"
+        },
+        {
+          "keys": "\u001b[Z",
+          "hex": "1b 5b 5a"
+        },
+        {
+          "keys": "\u001b[Z",
+          "hex": "1b 5b 5a"
+        }
+      ],
+      "cursor": {
+        "x": 2,
+        "y": 33,
+        "visible": true
+      },
+      "rows": 36,
+      "capturedAt": "2026-10-14T06:58:59.722Z"
+    },
+    {
+      "file": "mode-auto-mode-80.txt",
+      "note": "입력 대기에서 shift+tab 3번",
+      "launch": {
+        "onboarded": true,
+        "withKey": true,
+        "approveKey": true,
+        "trusted": true,
+        "cols": 80,
+        "rows": 30,
+        "mcp": null,
+        "env": []
+      },
+      "before": [
+        {
+          "keys": "\u001b[Z",
+          "hex": "1b 5b 5a"
+        },
+        {
+          "keys": "\u001b[Z",
+          "hex": "1b 5b 5a"
+        },
+        {
+          "keys": "\u001b[Z",
+          "hex": "1b 5b 5a"
+        }
+      ],
+      "cursor": {
+        "x": 2,
+        "y": 27,
+        "visible": true
+      },
+      "rows": 30,
+      "capturedAt": "2026-10-14T06:58:31.419Z"
+    },
+    {
+      "file": "mode-plan-mode-120.txt",
+      "note": "입력 대기에서 shift+tab 2번",
+      "launch": {
+        "onboarded": true,
+        "withKey": true,
+        "approveKey": true,
+        "trusted": true,
+        "cols": 120,
+        "rows": 36,
+        "mcp": null,
+        "env": []
+      },
+      "before": [
+        {
+          "keys": "\u001b[Z",
+          "hex": "1b 5b 5a"
+        },
+        {
+          "keys": "\u001b[Z",
+          "hex": "1b 5b 5a"
+        }
+      ],
+      "cursor": {
+        "x": 2,
+        "y": 33,
+        "visible": true
+      },
+      "rows": 36,
+      "capturedAt": "2026-10-14T06:58:58.875Z"
+    },
+    {
+      "file": "mode-plan-mode-80.txt",
+      "note": "입력 대기에서 shift+tab 2번",
+      "launch": {
+        "onboarded": true,
+        "withKey": true,
+        "approveKey": true,
+        "trusted": true,
+        "cols": 80,
+        "rows": 30,
+        "mcp": null,
+        "env": []
+      },
+      "before": [
+        {
+          "keys": "\u001b[Z",
+          "hex": "1b 5b 5a"
+        },
+        {
+          "keys": "\u001b[Z",
+          "hex": "1b 5b 5a"
+        }
+      ],
+      "cursor": {
+        "x": 2,
+        "y": 27,
+        "visible": true
+      },
+      "rows": 30,
+      "capturedAt": "2026-10-14T06:58:30.451Z"
+    },
+    {
+      "file": "security-notes-120.txt",
+      "note": "보안 안내 뒤 Enter로 넘기기(키 승인됨, 테마에서 Enter)",
+      "launch": {
+        "onboarded": false,
+        "withKey": true,
+        "approveKey": true,
+        "trusted": false,
+        "cols": 120,
+        "rows": 36,
+        "mcp": null,
+        "env": []
+      },
+      "before": [
+        {
+          "keys": "\r",
+          "hex": "0d"
+        }
+      ],
+      "cursor": {
+        "x": 0,
+        "y": 27,
+        "visible": false
+      },
+      "rows": 36,
+      "capturedAt": "2026-10-14T06:58:50.273Z"
+    },
+    {
+      "file": "security-notes-80.txt",
+      "note": "보안 안내 뒤 Enter로 넘기기(키 승인됨, 테마에서 Enter)",
+      "launch": {
+        "onboarded": false,
+        "withKey": true,
+        "approveKey": true,
+        "trusted": false,
+        "cols": 80,
+        "rows": 30,
+        "mcp": null,
+        "env": []
+      },
+      "before": [
+        {
+          "keys": "\r",
+          "hex": "0d"
+        }
+      ],
+      "cursor": {
+        "x": 0,
+        "y": 27,
+        "visible": false
+      },
+      "rows": 30,
+      "capturedAt": "2026-10-14T06:58:20.186Z"
+    },
+    {
+      "file": "shortcuts-help-120.txt",
+      "note": "빈 입력 칸에서 ? 를 눌러 연 단축키 도움말",
+      "launch": {
+        "onboarded": true,
+        "withKey": true,
+        "approveKey": true,
+        "trusted": true,
+        "cols": 120,
+        "rows": 36,
+        "mcp": null,
+        "env": []
+      },
+      "before": [
+        {
+          "keys": "/",
+          "hex": "2f"
+        },
+        {
+          "keys": "",
+          "hex": "7f"
+        },
+        {
+          "keys": "?",
+          "hex": "3f"
+        }
+      ],
+      "cursor": {
+        "x": 2,
+        "y": 27,
+        "visible": true
+      },
+      "rows": 36,
+      "capturedAt": "2026-10-14T06:59:04.880Z"
+    },
+    {
+      "file": "slash-menu-120.txt",
+      "note": "입력 칸에 / 를 쳐서 연 명령 메뉴",
+      "launch": {
+        "onboarded": true,
+        "withKey": true,
+        "approveKey": true,
+        "trusted": true,
+        "cols": 120,
+        "rows": 36,
+        "mcp": null,
+        "env": []
+      },
+      "before": [
+        {
+          "keys": "/",
+          "hex": "2f"
+        }
+      ],
+      "cursor": {
+        "x": 3,
+        "y": 33,
+        "visible": true
+      },
+      "rows": 36,
+      "capturedAt": "2026-10-14T06:59:03.207Z"
+    },
+    {
+      "file": "theme-120.txt",
+      "note": "첫 실행 테마 고르기(온보딩 안 함, 키 없음)",
+      "launch": {
+        "onboarded": false,
+        "withKey": false,
+        "approveKey": true,
+        "trusted": false,
+        "cols": 120,
+        "rows": 36,
+        "mcp": null,
+        "env": []
+      },
+      "before": [],
+      "cursor": {
+        "x": 1,
+        "y": 21,
+        "visible": false
+      },
+      "rows": 36,
+      "capturedAt": "2026-10-14T06:58:39.539Z"
+    },
+    {
+      "file": "theme-80.txt",
+      "note": "첫 실행 테마 고르기(온보딩 안 함, 키 없음)",
+      "launch": {
+        "onboarded": false,
+        "withKey": false,
+        "approveKey": true,
+        "trusted": false,
+        "cols": 80,
+        "rows": 30,
+        "mcp": null,
+        "env": []
+      },
+      "before": [],
+      "cursor": {
+        "x": 1,
+        "y": 15,
+        "visible": false
+      },
+      "rows": 30,
+      "capturedAt": "2026-10-14T06:58:11.422Z"
+    },
+    {
+      "file": "trust-120.txt",
+      "note": "폴더 신뢰 창(믿지 않는 폴더)",
+      "launch": {
+        "onboarded": true,
+        "withKey": true,
+        "approveKey": true,
+        "trusted": false,
+        "cols": 120,
+        "rows": 36,
+        "mcp": null,
+        "env": []
+      },
+      "before": [],
+      "cursor": {
+        "x": 1,
+        "y": 13,
+        "visible": false
+      },
+      "rows": 36,
+      "capturedAt": "2026-10-14T06:58:51.635Z"
+    },
+    {
+      "file": "trust-80.txt",
+      "note": "폴더 신뢰 창(믿지 않는 폴더)",
+      "launch": {
+        "onboarded": true,
+        "withKey": true,
+        "approveKey": true,
+        "trusted": false,
+        "cols": 80,
+        "rows": 30,
+        "mcp": null,
+        "env": []
+      },
+      "before": [],
+      "cursor": {
+        "x": 1,
+        "y": 15,
+        "visible": false
+      },
+      "rows": 30,
+      "capturedAt": "2026-10-14T06:58:21.480Z"
+    }
+  ]
+}

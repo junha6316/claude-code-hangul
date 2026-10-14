@@ -1,0 +1,20 @@
+{
+  "file": "../../screens/auth-logged-out-idle.txt",
+  "cols": 120,
+  "cursorRow": -1,
+  "mustCover": [
+    0,
+    1,
+    4,
+    5,
+    6,
+    12,
+    13
+  ],
+  "mustNotCover": [
+    2,
+    7,
+    10
+  ],
+  "source": "test/fixtures/screens/auth-logged-out-idle.txt (T6 캡처, claude 2.1.296. 만든 방법은 그 폴더의 manifest.json). 커서 위치는 기록되지 않아 -1"
+}

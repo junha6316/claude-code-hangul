@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; object-src 'none'; base-uri 'none'; form-action 'none'">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <title>클로드 코드 한글판 (비공식)</title>
+  <link rel="stylesheet" href="../../node_modules/@xterm/xterm/css/xterm.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="app" data-kct-shell="1">
+    <header id="topbar">
+      <div class="folder" title="지금 일하는 폴더예요">
+        <span class="folder-icon" aria-hidden="true">📁</span>
+        <span id="folder-name">작업실</span>
+      </div>
+      <div id="context" class="context" role="group" aria-label="대화 길이">
+        <span class="context-label">대화 길이</span>
+        <div class="meter" role="progressbar" aria-label="대화 길이" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" id="context-meter">
+          <div class="meter-fill" id="context-fill"></div>
+        </div>
+        <span id="context-text" class="context-text">0%</span>
+        <span id="context-hint" class="context-hint" hidden>새 대화를 권해요</span>
+      </div>
+      <div class="top-actions">
+        <button type="button" id="btn-original" class="btn" title="터미널의 영어 문구를 한국어로 덮지 않고 원래 영어로 보여 줘요" hidden>영어 원문 보기</button>
+        <button type="button" id="btn-new" class="btn" title="지금 대화를 끝내고 새로 시작해요">새 대화</button>
+        <button type="button" id="btn-folder" class="btn" title="작업 폴더를 열어서 보여 줘요">폴더 열기</button>
+      </div>
+    </header>
+
+    <main id="workspace">
+      <section id="terminal-wrap" aria-label="클로드와 이야기하는 화면">
+        <div id="terminal"></div>
+      </section>
+
+      <aside id="panel" aria-label="안내">
+        <section id="perm-area" aria-live="assertive" aria-label="허락 요청"></section>
+        <section id="guide-area" aria-live="polite" aria-label="화면 안내" hidden></section>
+        <section id="log-area" aria-label="진행 기록">
+          <h2 class="panel-title">진행 기록</h2>
+          <p id="log-empty" class="log-empty">아직 기록이 없어요. 왼쪽 화면에 할 일을 적어 보세요.</p>
+          <ol id="log" class="log"></ol>
+        </section>
+      </aside>
+    </main>
+
+    <div id="install-overlay" class="overlay" role="dialog" aria-modal="true" aria-labelledby="install-title" hidden>
+      <div class="install-card">
+        <h1 id="install-title">클로드 코드를 먼저 설치해야 해요</h1>
+        <p class="install-desc">이 앱은 클로드 코드라는 프로그램을 불러서 일해요. 아직 이 컴퓨터에 설치돼 있지 않아요.</p>
+        <p class="install-desc">아래 버튼을 누르면 공식 설치 방법으로 설치해요. 관리자 암호는 묻지 않고, 몇 분 걸릴 수 있어요.</p>
+        <p id="install-phase" class="install-phase" aria-live="polite"></p>
+        <button type="button" id="btn-install" class="btn primary big">설치하기</button>
+        <pre id="install-log" class="install-log" aria-label="설치 기록" hidden></pre>
+      </div>
+    </div>
+  </div>
+
+  <script src="../../node_modules/@xterm/xterm/lib/xterm.js"></script>
+  <script src="../../node_modules/@xterm/addon-fit/lib/addon-fit.js"></script>
+  <!-- 영어 줄 번역 규칙(window.KctTermKorean). 파일이 없어도 화면은 그대로 뜨고 덮개만 꺼진다. -->
+  <script src="../shared/termKorean.js"></script>
+  <script src="overlay.js"></script>
+  <script src="renderer.js"></script>
+</body>
+</html>

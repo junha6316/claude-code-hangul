@@ -1,0 +1,25 @@
+{
+  "file": "../../screens/theme.txt",
+  "cols": 120,
+  "cursorRow": -1,
+  "mustCover": [
+    15,
+    17,
+    18,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    34
+  ],
+  "mustNotCover": [
+    29,
+    30,
+    31,
+    32
+  ],
+  "source": "test/fixtures/screens/theme.txt (T6 캡처, claude 2.1.296. 만든 방법은 그 폴더의 manifest.json). 커서 위치는 기록되지 않아 -1"
+}

@@ -1,0 +1,19 @@
+{
+  "cols": 80,
+  "cursorRow": 15,
+  "mustCover": [
+    2,
+    7,
+    8,
+    9,
+    11,
+    13,
+    16,
+    18
+  ],
+  "mustNotCover": [
+    4,
+    5
+  ],
+  "source": "claude 2.1.299 실제 캡처: cd app && node test/fixtures/term/capture.js (폴더 신뢰 창(믿지 않는 폴더))"
+}

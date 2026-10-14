@@ -1,0 +1,44 @@
+
+✻ Churned for 2s · done 오후 6:27
+
+❯ Use the Write tool to create i.txt containing exactly: eye. Do nothing else.
+
+⏺ Write(i.txt)
+  ⎿  User rejected write to i.txt
+      1 eye
+
+✻ Baked for 1s · done 오후 6:27
+
+❯ Use the Write tool to create j.txt containing exactly: jay. Do nothing else.
+
+⏺ Write(j.txt)
+  ⎿  PreToolUse:Write hook error
+  ⎿  connect ECONNREFUSED 127.0.0.1:47123
+  ⎿  Wrote 1 line to j.txt
+      1 jay
+  ⎿  PostToolUse:Write hook error
+  ⎿  connect ECONNREFUSED 127.0.0.1:47123
+
+⏺ I created /Users/tester/Projects/kct-hook-ws/j.txt with the content jay. The earlier write to i.txt was rejected, so I didn't retry
+  it.
+
+⏺ Ran 1 stop hook (ctrl+o to expand)
+  ⎿  Stop hook error: connect ECONNREFUSED 127.0.0.1:47123
+
+✻ Brewed for 2s · done 오후 6:28
+
+❯ Use the WebFetch tool to fetch https://example.org and tell me its title in one line.
+
+⏺ Fetch(https://example.org)
+
+────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+ Fetch
+ Claude wants to fetch content from example.org
+╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
+ url: https://example.org/
+ prompt: What is the title of this page? Reply with the title only.
+╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
+ Do you want to allow Claude to fetch this content?
+ ❯ 1. Yes
+   2. Yes, and don't ask again for example.org
+   3. No, and tell Claude what to do differently (esc)

@@ -1,0 +1,44 @@
+
+
+⏺ Remote Control is disabled by your organization's policy. Contact your organization admin for access.
+
+❯ Use the Write tool to create k.txt containing exactly: kay. Do nothing else.
+
+⏺ Write(k.txt)
+  ⎿  User rejected write to k.txt
+      1 kay
+
+✻ Cogitated for 1s · done 오후 6:29
+
+❯ Use the Write tool to create l.txt containing exactly: ell. Do nothing else.
+
+⏺ Write(l.txt)
+  ⎿  Wrote 1 line to l.txt
+      1 ell
+
+⏺ I created l.txt in the project directory with the content ell. Nothing else was changed.
+
+✻ Baked for 1s · done 오후 6:29
+
+❯ Call the Notion MCP search tool (notion-search) once with query 'hello'. If no Notion tool exists, just say NO_NOTION.
+
+⏺ Calling Notion… (ctrl+o to expand)
+  ⎿  "hello"
+
+────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+ Tool use
+ Notion — Notion-Search Tool: (MCP)
+╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
+ query: "hello"
+╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌╌
+ About the Notion — Notion-Search Tool:
+ │ Search Notion and connected workspace sources available to you, such as Slack, Mail, and Calendar, with AI search. Use this tool for
+ │ every content search: exact keywords, page titles, project names, and natural-language questions. Keywords are valid; a question is…
+ (ctrl+o to expand description)
+
+ Do you want to proceed?
+ ❯ 1. Yes
+   2. Yes, and don't ask again for Notion — Notion-Search commands in /Users/tester/Projects/kct-hook-ws
+   3. No
+
+ Esc to cancel · Tab to amend

@@ -1,0 +1,36 @@
+
+ ▐▛███▛█   Claude Code v2.1.299
+▝▜██████▀  Opus 5.5 · API Usage Billing
+ ▝▝   ▝▝   ~/Projects/korean-claude-terminal/app/.test-tmp/T10/cap/menus-120/work
+
+⚠ Remote managed settings failed to load (authentication rejected (401)) · no remote policy applied · /status for
+  details
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                                                                    ◐ medium · /effort
+────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+❯ Try "fix lint errors"
+────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+  ! for shell mode        double tap esc to clear input      ctrl + shift + _ to undo
+  / for commands          shift + tab to auto-accept edits   ctrl + z to suspend
+  @ for file paths        ctrl + o for verbose output        ctrl + v to paste images
+  /btw for side question  ctrl + t to toggle tasks           opt + p to switch model
+                          shift + ⏎ for newline              ctrl + s to stash prompt
+                                                             ctrl + g to edit in $EDITOR
+                                                             /keybindings to customize

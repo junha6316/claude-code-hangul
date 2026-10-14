@@ -1,0 +1,24 @@
+{
+  "file": "../../screens/stale-auth-error.synthetic.txt",
+  "cols": 120,
+  "cursorRow": -1,
+  "mustCover": [
+    1,
+    2,
+    5,
+    6,
+    9,
+    37,
+    41
+  ],
+  "mustNotCover": [
+    3,
+    8,
+    11,
+    13,
+    15,
+    17,
+    39
+  ],
+  "source": "test/fixtures/screens/stale-auth-error.synthetic.txt (T6 캡처, claude 2.1.296. 만든 방법은 그 폴더의 manifest.json). 커서 위치는 기록되지 않아 -1"
+}

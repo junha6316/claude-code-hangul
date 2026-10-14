@@ -1,0 +1,44 @@
+
+ ▐▛███▛█   Claude Code v2.1.296
+▝▜██████▀  Opus 5.5 · API Usage Billing
+ ▝▝   ▝▝   ~/Projects/korean-claude-terminal/app/.test-tmp/T6/cap/trusted/work
+
+⚠ Remote managed settings failed to load (authentication rejected (401)) · no remote policy applied · /status for
+  details
+
+❯ 안녕하세요
+
+⏺ 화면에 나오는 영어 문구는 이런 뜻이에요.
+  - "Yes, I trust this folder": 이 폴더를 믿는다는 뜻이에요.
+  - "Do you want to proceed?": 계속할지 묻는 말이에요.
+  - "Invalid API key · Fix external API key": 키가 틀렸다는 뜻이에요.
+  - "Press Enter to continue…", "Select login method:", "Choose the text style"
+  - "You've hit your session limit · resets 3:45pm", "Not logged in · Run /login"
+   ❯ No, exit
+     Yes, I trust this folder
+
+✻ Worked for 2s · done 오전 9:51
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                                                                    ◐ medium · /effort
+────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+❯ 
+────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+  ⏸ manual mode on · ? for shortcuts · ← for agents

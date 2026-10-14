@@ -1,0 +1,16 @@
+{
+  "cols": 80,
+  "cursorRow": 22,
+  "mustCover": [
+    0,
+    17,
+    18,
+    20,
+    23,
+    24
+  ],
+  "mustNotCover": [
+    1
+  ],
+  "source": "claude 2.1.299 실제 캡처: cd app && node test/fixtures/term/capture.js (로그인 방법 고르기(테마에서 Enter))"
+}
