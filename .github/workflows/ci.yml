@@ -1,0 +1,67 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  test:
+    name: 시험
+    runs-on: macos-15
+    timeout-minutes: 30
+    env:
+      HOMEBREW_NO_AUTO_UPDATE: '1'
+    steps:
+      - uses: actions/checkout@v7.0.1
+      - uses: actions/setup-node@v7.0.0
+        with:
+          node-version: 24
+          cache: npm
+      - run: brew install tmux
+      - run: npm ci
+      - run: npm test
+      - run: npm run e2e:ui
+      - name: 실패하면 시험 산출물 올리기
+        if: failure()
+        uses: actions/upload-artifact@v7.0.1
+        with:
+          name: test-output
+          path: .test-tmp/
+          retention-days: 7
+
+  build-mac:
+    name: macOS 설치 파일
+    needs: test
+    runs-on: macos-15
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v7.0.1
+      - uses: actions/setup-node@v7.0.0
+        with:
+          node-version: 24
+          cache: npm
+      - run: npm ci
+      - run: npm run dist
+      - name: 포장된 앱 시험
+        run: npm run e2e:packaged
+        env:
+          KCT_PACKAGED_APP: dist/mac-arm64/Claude Code Hangul.app/Contents/MacOS/Claude Code Hangul
+      - uses: actions/upload-artifact@v7.0.1
+        with:
+          name: claude-code-hangul-mac
+          path: dist/*.dmg
+          retention-days: 14
+          if-no-files-found: error
+      - name: 실패하면 시험 산출물 올리기
+        if: failure()
+        uses: actions/upload-artifact@v7.0.1
+        with:
+          name: packaged-test-output
+          path: .test-tmp/
+          retention-days: 7

@@ -8,10 +8,12 @@
   "main": "src/main/main.js",
   "scripts": {
     "start": "electron .",
+    "dist": "electron-builder --mac --publish never",
     "test": "node --test \"test/!(e2e-*).test.js\"",
     "smoke": "electron scripts/smoke.js",
     "e2e:ui": "node --test test/e2e-ui.test.js",
     "e2e:app": "node --test test/e2e-app.test.js",
+    "e2e:packaged": "node --test test/e2e-packaged.test.js",
     "postinstall": "install-electron"
   },
   "dependencies": {
@@ -22,6 +24,42 @@
   },
   "devDependencies": {
     "electron": "44.5.0",
+    "electron-builder": "26.17.0",
     "playwright": "1.63.0"
+  },
+  "build": {
+    "appId": "io.github.junha6316.claude-code-hangul",
+    "productName": "Claude Code Hangul",
+    "artifactName": "claude-code-hangul-${version}-${arch}.${ext}",
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "src/**/*",
+      "package.json",
+      "!node_modules/node-pty/prebuilds/{linux,win32}-*/**",
+      "!node_modules/node-pty/third_party/**"
+    ],
+    "asarUnpack": [
+      "node_modules/node-pty/**"
+    ],
+    "npmRebuild": false,
+    "mac": {
+      "target": [
+        {
+          "target": "dmg",
+          "arch": [
+            "arm64",
+            "x64"
+          ]
+        }
+      ],
+      "category": "public.app-category.productivity",
+      "identity": "-",
+      "hardenedRuntime": false,
+      "extendInfo": {
+        "CFBundleDisplayName": "클로드 코드 한글판 (비공식)"
+      }
+    }
   }
 }

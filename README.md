@@ -30,6 +30,12 @@ npm ci      # 처음 한 번. Electron 실행 파일도 이때 받습니다
 npm start
 ```
 
+## 설치 파일
+
+GitHub Actions가 main에 올라올 때마다 시험을 돌리고, macOS 설치 파일(.dmg, 애플 실리콘용 arm64와 인텔용 x64)을 실행 결과의 Artifacts에 14일 동안 남깁니다.
+
+이 설치 파일에는 Apple 개발자 서명과 공증이 없습니다. 그래서 처음 열 때 macOS가 막습니다. 시스템 설정 → 개인정보 보호 및 보안에서 "그래도 열기"를 눌러야 열립니다.
+
 ## 알려진 문제
 
 - 상태 줄의 📁 뒤에 지난 글자가 남을 때가 있습니다(이모지 폭 차이).
@@ -65,6 +71,10 @@ Electron 44는 설치할 때 실행 파일을 받지 않고 처음 실행할 때
 - `npm test`: 단위 시험(`test/*.test.js`, 단 `e2e-*` 제외)
 - `npm run smoke`: 숨긴 창으로 Electron과 node-pty 연기 시험
 - `npm run e2e:ui`, `npm run e2e:app`: 화면·통합 시험
+- `npm run dist`: macOS 설치 파일(.dmg)을 `dist/`에 만듭니다. ad-hoc 서명만 합니다.
+- `npm run e2e:packaged`: `dist/`의 포장된 앱을 가짜 claude로 띄워 확인합니다.
+
+포장된 앱 묶음 이름은 영어(`Claude Code Hangul.app`)이고, 한국어 이름은 `CFBundleDisplayName`과 창 제목에만 씁니다. 묶음 이름에 한국어가 들어가면 Electron 44가 뜨자마자 SIGTRAP으로 끝났습니다(2026-10-14 확인).
 
 시험 산출물은 `.test-tmp/<작업 ID>/`에 남고 git에서 빠집니다.
 

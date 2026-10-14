@@ -102,7 +102,8 @@ test('설치 명령에 관리자 권한(sudo·runas)이 없다', () => {
   }
 });
 
-test('이 Mac의 ~/.local/bin/claude를 installed: true, 2.1.x로 알아본다', { skip: process.platform !== 'darwin' }, async () => {
+const HOST_CLAUDE = path.join(os.homedir(), '.local', 'bin', 'claude');
+test('이 Mac의 ~/.local/bin/claude를 installed: true, 2.1.x로 알아본다', { skip: process.platform !== 'darwin' || (!fs.existsSync(HOST_CLAUDE) && '이 Mac에 claude가 깔려 있지 않습니다(CI 등)') }, async () => {
   const r = await checkClaude(hostEnv({ HOME: os.homedir() }), 'darwin');
   results.thisMac = r;
   assert.equal(r.installed, true);
